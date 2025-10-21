@@ -1,0 +1,302 @@
+/* basic reset and typography */
+body {
+		font-family: Roboto, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial;
+		line-height: 1.6;
+		color: #222;
+		margin: 0;
+		padding: 0;
+		background: #fafafa;
+}
+
+@font-face {
+	font-family: 'Playfair';
+	src: url(Fonts/playfair.ttf);
+	font-weight: normal;
+	letter-spacing: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0 !important;
+	font-family: 'Playfair', serif;
+}
+
+h2 {
+	margin: 0.5rem 0;
+}
+
+.site-nav {
+    background: black;
+}
+
+h1 {
+	margin-bottom: 0 !important;
+}
+
+a {
+	font-family: 'Playfair', serif;
+	letter-spacing: 2px;
+}
+
+.container.nav-inner {
+	max-width: 1280px;
+	justify-content: center;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.site-nav .brand {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+	font-size: 1.125rem;
+	color: white; /* clover-ish green */
+	text-decoration: none;
+}
+
+.nav-links {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 1.25rem;
+	align-items: center;
+}
+
+.nav-links li { margin: 0; }
+.nav-links a {
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover,
+.nav-links a:focus {
+	color: rgb(199, 73, 23);
+}
+
+.dinner-images {
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	justify-content: center;
+}
+
+a.dinner-hover img {
+    width: 100%; /* <-- CHANGE from max-width. Fills its container */
+    aspect-ratio: 1 / 1; /* <-- ADD this to make it square */
+    object-fit: cover; /* <-- ADD this to prevent distortion */
+    
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+	display: block;
+}
+
+a.dinner-hover:hover img {
+	transform: scale(1.05);
+	filter: grayscale(0%);
+}
+
+
+a.dinner-hover {
+    /* flex: 1; */       /* <-- REMOVE THIS */
+    flex-basis: 25%;  /* <-- ADD THIS */
+    /* (You can also use the shorthand: flex: 0 0 25%;) */
+
+    min-width: 0; 
+    overflow: hidden; 
+    position: relative; 
+    
+    /* ... (rest of your styles) ... */
+    color: white;
+    text-decoration: none;
+    transition: 0.5s;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.image-title {
+    position: absolute; /* Lifts the text up */
+    top: 50%;           /* Moves the top edge to the 50% mark */
+    left: 50%;          /* Moves the left edge to the 50% mark */
+    transform: translate(-50%, -50%); /* Pulls it back by half its own width/height to center it perfectly */
+
+    /* Style the text */
+    color: white;
+    font-size: 1.5rem; /* Or whatever size you like */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Makes it readable */
+    
+    /* This prevents the text from "stealing" the hover from the image */
+    pointer-events: none; 
+}
+
+.image-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+
+}
+
+/* --- ADD THIS NEW HOVER RULE --- */
+a.dinner-hover:hover .image-title {
+    opacity: 1; /* Fade in on hover */
+}
+
+
+
+
+div.search {
+	display: flex;
+	gap: 1rem;
+	justify-content: center;
+	margin-top: 2rem;
+	flex-wrap: wrap;
+}
+
+.search button {
+	height: 50px;
+	color: black;
+	font-family: 'Playfair';
+	background: white;
+	transition: color 0.3s ease, background-color 0.3s ease;
+	cursor: pointer;
+	border-color: black;
+	border-style: solid;
+	font-size: 1.5rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.search button:hover {
+	background-color: black;
+	color: white;
+}
+
+div.recipes {
+	margin-top: 2rem;
+	display: flex;
+	gap: 3rem;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+	justify-content: center;
+}
+
+a.recipe-hover img {
+	display: block;
+	width: 300px;
+
+}
+
+a.dinner-hover img {
+    width: 100%; /* <-- CHANGE from max-width. Fills its container */
+    aspect-ratio: 1 / 1; /* <-- ADD this to make it square */
+    object-fit: cover; /* <-- ADD this to prevent distortion */
+    
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+	display: block;
+}
+
+.recipes-main {
+	max-width: 85vw;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+/* --- Recipe Card Styles --- */
+
+.recipe-card {
+    width: 300px; /* Matches your a.recipe-hover img width */
+    background: #ffffff; /* White background for the card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Adds a soft shadow */
+    overflow: hidden; /* Ensures shadow and border-radius work with the image */
+}
+
+/* Container for all the text */
+.recipe-info {
+    padding: 1rem;
+}
+
+/* 1. The Recipe Title */
+.recipe-title {
+    font-family: 'Playfair', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.recipe-title a {
+    text-decoration: none;
+    color: #222; /* Dark text color */
+    transition: color 0.3s ease;
+}
+
+.recipe-title a:hover {
+    color: rgb(199, 73, 23); /* Your brand's hover color */
+}
+
+
+/* 2. The Tags */
+.recipe-tags {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0 0 0.75rem 0; /* Space below the tags */
+    
+    display: flex; /* Makes tags sit side-by-side */
+    flex-wrap: wrap; /* Allows tags to wrap to the next line */
+    gap: 0.5rem; /* Space between tags */
+}
+
+.recipe-tags li {
+    font-family: Roboto, sans-serif; /* Use your body font */
+    font-size: 0.8rem;
+    background: #eee; /* Light gray background */
+    padding: 0.25rem 0.5rem;
+    color: #555;
+}
+
+
+/* 3. The Fading Description */
+.recipe-description {
+    font-family: Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.5; /* Sets consistent line height */
+
+    /* This is the fade-out magic */
+    max-height: 4.5rem; /* (1.5 line-height * 3 lines) - Adjust as needed */
+    overflow: hidden;
+    position: relative; /* Required for the fade effect */
+}
+
+.recipe-description::after {
+    content: ""; /* Required for a pseudo-element */
+    position: absolute; /* Lifts it on top of the text */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5rem; /* The height of the fade */
+    
+    /* The gradient: from transparent white to solid white */
+    background: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0), 
+        rgba(255, 255, 255, 1)
+    );
+}
