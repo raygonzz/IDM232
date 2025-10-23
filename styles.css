@@ -64,7 +64,7 @@ a {
 
 .nav-links li { margin: 0; }
 .nav-links a {
-	color: white;
+	color: #fafafa;
 	text-decoration: none;
 	font-weight: 500;
     transition: color 0.3s ease;
@@ -72,6 +72,44 @@ a {
 .nav-links a:hover,
 .nav-links a:focus {
 	color: rgb(199, 73, 23);
+}
+
+.search-bar {
+    margin-top: 1rem; 
+    margin-bottom: 1.5rem; 
+    width: 90%; 
+    max-width: 400px;
+    text-align: center;
+}
+
+.search-bar input[type="text"] {
+    border-radius: 25px;
+    font-family: 'Playfair', Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: #222;
+    background: #fafafa;
+    
+    /* Sizing and Spacing */
+    width: 100%;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box; 
+    
+    /* Styling the look */
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #777;
+}
+
+.search-bar input[type="text"]:focus {
+    outline: none;
+    background: #fff;
+    
+    border-color: rgb(199, 73, 23); 
+    
+    box-shadow: 0 0 8px rgba(199, 73, 23, 0.4); 
 }
 
 .dinner-images {
@@ -102,7 +140,7 @@ a.dinner-hover {
     min-width: 0; 
     overflow: hidden; 
     position: relative; 
-    color: white;
+    color: #fafafa;
     text-decoration: none;
     transition: 0.5s;
     text-align: center;
@@ -114,7 +152,7 @@ a.dinner-hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #fafafa;
     font-size: 1.5rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
@@ -137,7 +175,7 @@ div.search {
 	height: 50px;
 	color: black;
 	font-family: 'Playfair';
-	background: white;
+	background: #fafafa;
 	transition: color 0.3s ease, background-color 0.3s ease;
 	cursor: pointer;
 	border-color: black;
@@ -149,12 +187,12 @@ div.search {
 
 .search button:hover {
 	background-color: black;
-	color: white;
+	color: #fafafa;
 }
 
 .search button.active {
     background: black;
-    color: white;
+    color: #fafafa;
 }
 
 div.recipes {
@@ -296,7 +334,7 @@ a.recipe-hover img {
     text-align: left;
     max-width: 600px;
     min-width: 300px; 
-    color: white;
+    color: #fafafa;
     margin-bottom: 2rem;
 }
 
@@ -331,11 +369,11 @@ a.recipe-hover img {
 
 .pesto-1-text li {
     list-style: none;
-    color: white;
+    color: #fafafa;
 }
 
 .pesto-1-text h2 {
-    color: white;
+    color: #fafafa;
     margin-top: 2rem;
 }
 
@@ -430,7 +468,7 @@ a.recipe-hover img {
 
 h1.large {
     transform: rotate(-90deg);
-    color: white;
+    color: #fafafa;
     letter-spacing: 0.5rem;
     font-size: 6rem;
     margin-left: -3.5rem;
@@ -450,6 +488,32 @@ h1.large-light {
     display: block;
     margin-top: 2rem;
 }
+
+
+/* --- Responsive Fix for Dinner Grid --- */
+@media (max-width: 1500px) {
+  .dinner-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .dinner-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .dinner-images {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 @media (max-width: 900px) {
     
@@ -485,7 +549,7 @@ h1.large-light {
     .tools-pesto p,
     .pesto-1-text,
     .pesto-text {
-        text-align: left;
+        text-align: center;
         max-width: 100%;
         padding: 0 1rem;
     }
