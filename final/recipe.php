@@ -62,10 +62,10 @@ if ($result->num_rows === 0) {
         </div>
     </section>
 
-    <section class="pesto-sandwich" style="margin-bottom: 2rem;">
-        <h2 style="text-align: center; margin-bottom: 1rem;">Ingredients</h2>
-        <div class="ingredients-columns" style="justify-content: center;">
-            <ul style="list-style: none; text-align: left;">
+    <section class="pesto-sandwich">
+        <h2>Ingredients</h2>
+        <div class="ingredients-columns">
+            <ul>
                 <?php foreach ($ingCol1 as $ing): ?>
                     <li style="margin-bottom: 0.5rem;"><?php echo htmlspecialchars($ing); ?></li>
                 <?php endforeach; ?>
@@ -99,7 +99,6 @@ if ($result->num_rows === 0) {
 
         $isOdd = ($stepCount % 2 != 0);
         $sectionClass = $isOdd ? 'pesto-1-dark' : 'tools-pesto'; 
-        
         $titleClass   = $isOdd ? 'large' : 'large-light';
         $textClass    = $isOdd ? 'pesto-1-text' : 'pesto-text';
         $imgClass     = $isOdd ? 'pesto-img' : '';
