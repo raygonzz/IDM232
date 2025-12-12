@@ -10,7 +10,7 @@ body {
 
 @font-face {
 	font-family: 'Playfair';
-	src: url(Fonts/playfair.ttf);
+	src: url(../Fonts/playfair.ttf);
 	font-weight: normal;
 	letter-spacing: 5px;
 }
