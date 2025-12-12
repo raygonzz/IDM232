@@ -54,3 +54,4 @@ dkms.conf
 .DS_Store
 _htaccess
 db_credentials.txt
+.htaccess
